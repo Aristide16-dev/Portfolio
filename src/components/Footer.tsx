@@ -39,7 +39,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://wa.me/225778461094?text=Bonjour%2FBonsoir%20%F0%9F%91%8B%0AJe%20suis%20ArisDev%2C%20d%C3%A9veloppeur%20JavaScript%20junior.%0AComment%20puis-je%20vous%20aider%20%3F"
+            href="https://wa.me/2250778461094?text=Bonjour%2FBonsoir%20%F0%9F%91%8B%0AJe%20suis%20ArisDev%2C%20d%C3%A9veloppeur%20JavaScript%20junior.%0AComment%20puis-je%20vous%20aider%20%3F"
             className="text-[#25D366] hover:opacity-75 transition-opacity"
             aria-label="WhatsApp"
             target="_blank"
