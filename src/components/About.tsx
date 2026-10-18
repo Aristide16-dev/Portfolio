@@ -2,8 +2,7 @@ import Title from "./Title";
 
 import profileImage from "../assets/moi.webp";
 
-import { motion } from "motion/react";
-
+import { motion } from "framer-motion";
 import {
   CalendarSync,
   LetterText,

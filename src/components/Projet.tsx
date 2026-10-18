@@ -6,7 +6,7 @@ import img3 from "../assets/projet-spuetenance.webp";
 
 import { Video, GitBranch } from "lucide-react";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 const Project = () => {
   const projects = [

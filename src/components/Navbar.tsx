@@ -1,23 +1,7 @@
-import { MonitorSmartphone, Moon, Sun } from "lucide-react";
+import { MonitorSmartphone } from "lucide-react";
 // import { useState, useEffect } from "react";
-import { motion } from "motion/react";
-
+import { motion } from "framer-motion";
 const Navbar = () => {
-  // const [theme, setTheme] = useState("business");
-
-  // useEffect(() => {
-  //   const savedTheme = localStorage.getItem("theme") || "business";
-  //   setTheme(savedTheme);
-  //   document.documentElement.setAttribute("data-theme", savedTheme);
-  // }, []);
-
-  // const toggleTheme = () => {
-  //   const newTheme = theme === "business" ? "dark" : "business";
-  //   setTheme(newTheme);
-  //   localStorage.setItem("theme", newTheme);
-  //   document.documentElement.setAttribute("data-theme", newTheme);
-  // };
-
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -53,18 +37,6 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-
-      {/* <button
-        onClick={toggleTheme}
-        className="btn btn-md btn-ghost absolute top-[-16px] right-[-25px] md:right-[-130px]"
-        aria-label="Basculer le thème"
-      >
-        {theme === "light" ? (
-          <Moon className="w-10 h-10" />
-        ) : (
-          <Sun className="w-10 h-10" />
-        )}
-      </button> */}
     </motion.div>
   );
 };

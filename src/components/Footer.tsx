@@ -1,6 +1,6 @@
 import { MonitorSmartphone } from "lucide-react";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <motion.footer

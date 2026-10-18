@@ -1,6 +1,6 @@
 import Title from "./Title";
 
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import imgCSS from "../assets/css.webp";
 

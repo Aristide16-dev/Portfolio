@@ -1,6 +1,6 @@
 import { Mail } from "lucide-react";
 import profileImage from "../assets/moi.webp";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 export default function Home() {
   return (
     <div
