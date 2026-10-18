@@ -1,24 +1,30 @@
 import { MonitorSmartphone, Moon, Sun } from "lucide-react";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
+import { motion } from "motion/react";
 
 const Navbar = () => {
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("business");
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "light";
-    setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
-  }, []);
+  // useEffect(() => {
+  //   const savedTheme = localStorage.getItem("theme") || "business";
+  //   setTheme(savedTheme);
+  //   document.documentElement.setAttribute("data-theme", savedTheme);
+  // }, []);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
-  };
+  // const toggleTheme = () => {
+  //   const newTheme = theme === "business" ? "dark" : "business";
+  //   setTheme(newTheme);
+  //   localStorage.setItem("theme", newTheme);
+  //   document.documentElement.setAttribute("data-theme", newTheme);
+  // };
 
   return (
-    <div className="navbar-initial flex justify-center md:justify-between items-center p-5 relative">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="navbar-initial flex justify-center md:justify-between items-center p-4 relative"
+    >
       <div>
         <a href="#home" className="font-bold text-2xl flex">
           <MonitorSmartphone className="w-10 h-10" />
@@ -27,12 +33,12 @@ const Navbar = () => {
       </div>
       <ul className="hidden md:flex md:space-x-3">
         <li>
-          <a href="#home" className="btn btn-xl btn-ghost">
+          <a href="#home" className="btn btn-md btn-ghost">
             Accueil
           </a>
         </li>
         <li>
-          <a href="#about" className="btn btn-xl btn-ghost">
+          <a href="#about" className="btn btn-md btn-ghost">
             À propos
           </a>
         </li>
@@ -47,7 +53,8 @@ const Navbar = () => {
           </a>
         </li>
       </ul>
-      <button
+
+      {/* <button
         onClick={toggleTheme}
         className="btn btn-md btn-ghost absolute top-[-16px] right-[-25px] md:right-[-130px]"
         aria-label="Basculer le thème"
@@ -57,8 +64,8 @@ const Navbar = () => {
         ) : (
           <Sun className="w-10 h-10" />
         )}
-      </button>
-    </div>
+      </button> */}
+    </motion.div>
   );
 };
 

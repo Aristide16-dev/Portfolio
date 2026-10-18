@@ -1,6 +1,8 @@
 import Title from "./Title";
 
-import profileImage from "../assets/photo_ia-removebg-preview.png";
+import profileImage from "../assets/moi.webp";
+
+import { motion } from "motion/react";
 
 import {
   CalendarSync,
@@ -55,27 +57,37 @@ const About = () => {
   ];
 
   return (
-    <div
-      id="about"
-      className="p-10 bg-base-300 mb-10 md:mb-32 animate-on-scroll"
-    >
+    <div id="about" className="p-10 bg-base-300 mb-13 md:mb-10 ">
       <Title title="À propos" />
 
       <div className="flex flex-col md:flex-row justify-center">
-        <div className="hidden md:block">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="hidden md:block"
+        >
           <img
             src={profileImage}
             alt=""
-            className="w-full max-w-md object-cover rounded-2xl"
+            className="w-full max-w-md object-cover rounded-2xl h-[400px] shadow-2xl"
           />
-        </div>
+        </motion.div>
 
         <div className="md:ml-4 space-y-2">
           {aboutSections.map((section, index) => (
-            <div
+            <motion.div
               key={section.id}
-              className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-full shadow-xl animate-on-scroll"
-              data-animate-delay={index * 100}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
+              className="flex flex-col md:flex-row items-center bg-base-100 p-5 rounded-xl md:w-full shadow-xl"
             >
               <div className="mb-2 md:mb-0">{section.icon}</div>
 
@@ -84,7 +96,7 @@ const About = () => {
 
                 <p className="text-sm">{section.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

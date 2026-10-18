@@ -8,12 +8,12 @@ import Projet from "./components/Projet";
 function App() {
   return (
     <div>
-      <div className="p-5 md:px-[15%]">
+      <div className="p-5 md:px-[10%]">
         <Navbar />
         <Home />
       </div>
       <About />
-      <div className="p-5 md:px-[15%]">
+      <div className="p-0 md:px-[10%]">
         <Competences />
       </div>
       <Projet />

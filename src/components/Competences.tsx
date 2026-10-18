@@ -1,30 +1,28 @@
 import Title from "./Title";
 
-import imgCSS from "../assets/css.png";
+import { motion } from "motion/react";
 
-import imgJS from "../assets/js.png";
+import imgCSS from "../assets/css.webp";
 
-import imgREACT from "../assets/react.png";
+import imgJS from "../assets/js.webp";
 
-import imgHTML from "../assets/html.png";
+import imgREACT from "../assets/react.webp";
+
+import imgHTML from "../assets/html.webp";
 
 import imgNEXT from "../assets/next-js.webp";
 
-import imgNODE from "../assets/node-js.png";
+import imgNODE from "../assets/node-js.webp";
 
-import imgTYPE from "../assets/js.png";
+import imgTYPE from "../assets/Typescript.webp";
 
-import imgTAILWIND from "../assets/tailwind.png";
+import imgTAILWIND from "../assets/tailwind.webp";
 
 import imgPRISMA from "../assets/prisma.webp";
 
-import imgDjango from "../assets/Django.jpg";
+import imgREACTNative from "../assets/React-Native.webp";
 
-import imgPython from "../assets/Python.jpg";
-
-import imgREACTNative from "../assets/React-Native.jpg";
-
-import imgDaisyUI from "../assets/DaisyUI.png";
+import imgDaisyUI from "../assets/DaisyUI_1.webp";
 
 const Competences = () => {
   const skills = [
@@ -46,26 +44,29 @@ const Competences = () => {
 
     { id: 9, name: "Prisma", image: imgPRISMA },
 
-    { id: 10, name: "Django", image: imgDjango },
-
-    { id: 11, name: "Python", image: imgPython },
-
     { id: 12, name: "daisyUI", image: imgDaisyUI },
 
     { id: 13, name: "React Native", image: imgREACTNative },
   ];
 
   return (
-    <div id="competences" className="animate-on-scroll">
+    <div id="competences" className="mt-3">
       <Title title="Competences" />
 
       <div className="flex justify-center items-center">
-        <div className="flex flex-wrap gap-4 justify-center items-center md:w-1/3 mt-4 md:mt-0">
+        <div className="flex flex-wrap gap-4 justify-center items-center md:w-2/3 mt-4 md:mt-0">
           {skills.map((skill, index) => (
-            <div
+            <motion.div
               key={skill.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.1,
+                ease: "easeOut",
+              }}
               className="flex justify-center items-center flex-col animate-on-scroll"
-              data-animate-delay={index * 50}
             >
               <div className="w-20 h-20 p-2 rounded-full border-2 border-accent">
                 <img
@@ -76,7 +77,7 @@ const Competences = () => {
               </div>
 
               <p className="text-sm mt-2">{skill.name}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
